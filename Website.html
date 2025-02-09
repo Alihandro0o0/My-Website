@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        ul#questionList {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        ul#questionList > li {
+            margin-top: 20px;
+        }
+        ul#questionList ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        li:hover {
+            background-color: #e9e9e9;
+        }
+        .hidden {
+            display: none;
+        }
+        .description {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="questionList">
+        <li onclick="toggleOptions('options1')">What sustainable activities do you do throughout the day?</li>
+        <ul id="options1" class="hidden">
+            <li onclick="showDescription('1. Recycling involves processing used materials into new products to prevent waste.', 'descriptionText1')">Recycling</li>
+            <li onclick="showDescription('2. Reducing plastic usage helps decrease environmental pollution.', 'descriptionText2')">Reducing plastic usage</li>
+            <li onclick="showDescription('3. Using energy efficient appliances is better for the environment.', 'descriptionText3')">Using energy-efficient appliances</li>
+            <li onclick="showDescription('4. Using public transportation or carpooling is much more efficient than having many vehicles outside that emit gas.', 'descriptionText4')">Using public transportation or carpooling</li>
+            <li onclick="showDescription('5. Composting food waste is better to not waste food as it also emits toxins that are harmful for nature.', 'descriptionText5')">Composting food waste</li>
+        </ul>
+        <div id="explanationHeading1" class="description hidden">
+            <h2>Explanation</h2>
+            <div id="descriptionText1"></div>
+            <div id="descriptionText2"></div>
+            <div id="descriptionText3"></div>
+            <div id="descriptionText4"></div>
+            <div id="descriptionText5"></div>
+        </div>
+
+        <li onclick="toggleOptions('options2')">How often do you purchase environmentally friendly products?</li>
+        <ul id="options2" class="hidden">
+            <li onclick="showDescription('1. Not purchasing environmentally friendly products can seriously inflict the slow growth of carbon footprint in our atmosphere causing harm to our planet.', 'descriptionText6')">Never</li>
+            <li onclick="showDescription('2. Purchasing environmentally friendly products sometimes is a good start that slightly reduces the carbon footprint.', 'descriptionText7')">Sometimes</li>
+            <li onclick="showDescription('3. Purchasing environmentally friendly products often can significantly reduce your carbon footprint.', 'descriptionText8')">Often</li>
+            <li onclick="showDescription('4. Always purchasing the environmentally friendly products surely and by a lot, reduces the carbon footprint making our planet cleaner.', 'descriptionText9')">Always</li>
+        </ul>
+        <div id="explanationHeading2" class="description hidden">
+            <h2>Explanation</h2>
+            <div id="descriptionText6"></div>
+            <div id="descriptionText7"></div>
+            <div id="descriptionText8"></div>
+            <div id="descriptionText9"></div>
+        </div>
+
+        <li onclick="toggleOptions('options3')">Which sustainability topics are you most concerned about?</li>
+        <ul id="options3" class="hidden">
+            <li onclick="showDescription('1. Climate change seriously affects the weather and can influence your attitude/mood.', 'descriptionText10')">Climate Change</li>
+            <li onclick="showDescription('2. Waste and pollution result from not liking smoked air which causes difficulty in breathing and looks unsightly.', 'descriptionText11')">Waste and Pollution</li>
+            <li onclick="showDescription('3. Deforestation removes natural habitats for many species and is a concern for maintaining biodiversity.', 'descriptionText12')">Deforestation</li>
+            <li onclick="showDescription('4. Water conservation is crucial as our planet may soon lack sufficient fresh water.', 'descriptionText13')">Water Conservation</li>
+        </ul>
+        <div id="explanationHeading3" class="description hidden">
+            <h2>Explanation</h2>
+            <div id="descriptionText10"></div>
+            <div id="descriptionText11"></div>
+            <div id="descriptionText12"></div>
+            <div id="descriptionText13"></div>
+        </div>
+
+        <li onclick="toggleOptions('options4')">What do you think is the biggest barrier to living a more sustainable lifestyle?</li>
+        <ul id="options4" class="hidden">
+            <li onclick="showDescription('The biggest barrier is often societal resistance or lack of awareness.', 'descriptionText14')">Overall answer</li>
+        </ul>
+        <div id="explanationHeading4" class="description hidden">
+            <h2>Explanation</h2>
+            <div id="descriptionText14"></div>
+        </div>
+
+        <li onclick="toggleOptions('options5')">What role do you think businesses should play in promoting sustainability?</li>
+        <ul id="options5" class="hidden">
+            <li onclick="showDescription('Businesses should lead by example and integrate sustainability into their operations.', 'descriptionText15')">Overall answer</li>
+        </ul>
+        <div id="explanationHeading5" class="description hidden">
+            <h2>Explanation</h2>
+            <div id="descriptionText15"></div>
+        </div>
+
+        <li onclick="toggleOptions('options6')">Do you believe that individual actions can significantly contribute to solving environmental problems?</li>
+        <ul id="options6" class="hidden">
+            <li onclick="showDescription('1. Yes, individual actions can have a significant impact when collectively adopted.', 'descriptionText16')">Yes</li>
+            <li onclick="showDescription('2. No, individual actions alone are not enough without structural changes.', 'descriptionText17')">No</li>
+            <li onclick="showDescription('3. Its uncertain whether individual efforts are sufficient without broader societal changes.', 'descriptionText18')">Not sure</li>
+        </ul>
+        <div id="explanationHeading6" class="description hidden">
+            <h2>Explanation</h2>
+            <div id="descriptionText16"></div>
+            <div id="descriptionText17"></div>
+            <div id="descriptionText18"></div>
+        </div>
+
+        <li onclick="toggleOptions('options7')">Do you bring reusable bags, water bottles, or coffee cups when you go out?</li>
+        <ul id="options7" class="hidden">
+            <li onclick="showDescription('1. Never bringing reusable items contributes negatively to the environment.', 'descriptionText19')">Never</li>
+            <li onclick="showDescription('2. Bringing reusable items occasionally helps reduce waste.', 'descriptionText20')">Occasionally</li>
+            <li onclick="showDescription('3. Sometimes using reusable items can make a positive impact on the environment.', 'descriptionText21')">Sometimes</li>
+            <li onclick="showDescription('4. Often using reusable items is a great way to reduce environmental impact.', 'descriptionText22')">Often</li>
+            <li onclick="showDescription('5. Always using reusable items is the best practice for environmental sustainability.', 'descriptionText23')">Always</li>
+        </ul>
+        <div id="explanationHeading7" class="description hidden">
+            <h2>Explanation</h2>
+            <div id="descriptionText19"></div>
+            <div id="descriptionText20"></div>
+            <div id="descriptionText21"></div>
+            <div id="descriptionText22"></div>
+            <div id="descriptionText23"></div>
+        </div>
+        
+        </div>
+    </ul>
+    <script>
+        function toggleOptions(optionsId) {
+            var allOptions = document.querySelectorAll('ul[id^="options"]');
+            var allExplanations = document.querySelectorAll('.description');
+    
+            // Toggle the clicked options display and hide all other options and their explanations.
+            allOptions.forEach(function(option) {
+                if (option.id === optionsId) {
+                    option.style.display = (option.style.display === 'block' ? 'none' : 'block');
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+    
+            // Ensure all explanations are hidden when toggling options.
+            allExplanations.forEach(function(explanation) {
+                explanation.style.display = 'none';
+            });
+        }
+    
+        function showDescription(text, descriptionId) {
+            // Hide all other explanations first
+            var allExplanations = document.querySelectorAll('.description');
+            allExplanations.forEach(function(explanation) {
+                explanation.style.display = 'none'; // Hide every explanation
+            });
+    
+            // Now show the appropriate explanation
+            var description = document.getElementById(descriptionId);
+            description.textContent = text;
+            var explanationHeading = description.parentNode; // Get the parent <div> of the description
+            explanationHeading.style.display = 'block'; // Show the explanation
+            explanationHeading.scrollIntoView({behavior: 'smooth'}); // Scroll into view smoothly
+        }
+    </script>
+    
+    
+    
+    
+    
+</body>
+</html>
